@@ -1,0 +1,36 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compilar Jogo",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "-o",
+                "jogo.exe",
+                "jogo_geometrico_3_d_open_gl_free_glut_main.cpp",
+                "-lfreeglut",
+                "-lopengl32",
+                "-lglu32"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Compila o jogo geométrico 3D usando OpenGL e FreeGLUT"
+        },
+        {
+            "label": "Executar Jogo",
+            "type": "shell",
+            "command": "./jogo.exe",
+            "dependsOn": "Compilar Jogo",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "detail": "Executa o jogo após a compilação"
+        }
+    ]
+}
